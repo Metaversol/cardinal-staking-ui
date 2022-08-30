@@ -1165,6 +1165,32 @@ export const stakePoolMetadatas: StakePoolMetadata[] = [
         value: 'https://warp.moonshinelabs.io/caps-discord',
       },
     ],
+    analytics: [
+      {
+        metadata: {
+          key: 'Pass Type',
+          type: 'staked',
+          totals: [
+            {
+              key: 'Bronze',
+              value: 2351,
+            },
+            {
+              key: 'Silver',
+              value: 1085,
+            },
+            {
+              key: 'Gold',
+              value: 98,
+            },
+            {
+              key: 'Platinum',
+              value: 7,
+            },
+          ],
+        },
+      },
+    ],
   },
   {
     name: 'computation-units',
@@ -1174,7 +1200,7 @@ export const stakePoolMetadatas: StakePoolMetadata[] = [
       '4Nmq5mM747qbA53Yik6KFw4G4nvoSRPsJqRSSGJUwWVa'
     ),
     websiteUrl: 'https://warp.moonshinelabs.io/cu',
-    receiptType: ReceiptType.Original,
+    // receiptType: ReceiptType.Original,
     tokenStandard: TokenStandard.NonFungible,
     imageUrl:
       'https://www.arweave.net/VYTqLwXIWw4BoI11xJdNfmLv4FcBYaF9nFpQH2ejdek?ext=png',
