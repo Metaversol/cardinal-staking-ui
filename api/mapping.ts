@@ -1,7 +1,8 @@
-import { AirdropMetadata } from '../common/Airdrop'
-import { PublicKey } from '@solana/web3.js'
 import { ReceiptType } from '@cardinal/staking/dist/cjs/programs/stakePool'
-import { CSSProperties } from 'react'
+import { PublicKey } from '@solana/web3.js'
+import type { CSSProperties } from 'react'
+
+import type { AirdropMetadata } from '../common/Airdrop'
 
 export enum TokenStandard {
   // Fungible, can have more than 1
@@ -1092,7 +1093,8 @@ export const stakePoolMetadatas: StakePoolMetadata[] = [
     websiteUrl: 'https://thesuites.app/',
     receiptType: ReceiptType.Original,
     tokenStandard: TokenStandard.NonFungible,
-    imageUrl: 'https://assets.thirdtimegames.com/images/The%20Suites_Primary_White_Gold_Square_1200.png',
+    imageUrl:
+      'https://assets.thirdtimegames.com/images/The%20Suites_Primary_White_Gold_Square_1200.png',
     maxStaked: 4932,
     links: [
       {
@@ -1163,6 +1165,32 @@ export const stakePoolMetadatas: StakePoolMetadata[] = [
         value: 'https://warp.moonshinelabs.io/caps-discord',
       },
     ],
+    analytics: [
+      {
+        metadata: {
+          key: 'Pass Type',
+          type: 'staked',
+          totals: [
+            {
+              key: 'Bronze',
+              value: 2351,
+            },
+            {
+              key: 'Silver',
+              value: 1085,
+            },
+            {
+              key: 'Gold',
+              value: 98,
+            },
+            {
+              key: 'Platinum',
+              value: 7,
+            },
+          ],
+        },
+      },
+    ],
   },
   {
     name: 'computation-units',
@@ -1172,7 +1200,7 @@ export const stakePoolMetadatas: StakePoolMetadata[] = [
       '4Nmq5mM747qbA53Yik6KFw4G4nvoSRPsJqRSSGJUwWVa'
     ),
     websiteUrl: 'https://warp.moonshinelabs.io/cu',
-    receiptType: ReceiptType.Original,
+    // receiptType: ReceiptType.Original,
     tokenStandard: TokenStandard.NonFungible,
     imageUrl:
       'https://www.arweave.net/VYTqLwXIWw4BoI11xJdNfmLv4FcBYaF9nFpQH2ejdek?ext=png',
@@ -1180,7 +1208,7 @@ export const stakePoolMetadatas: StakePoolMetadata[] = [
     backgroundImage:
       'https://shdw-drive.genesysgo.net/5aWZWB6vXbZrf1CNmiM3rAWnzf36Bpuq8rxRYHBzGeGq/swrm_cu_card_1.png',
     colors: {
-      primary: '#BBBBBB',
+      primary: '#233244',
       secondary: '#BBBBBB',
       accent: '#DE38C8',
       fontColor: '#FFFFFF',
