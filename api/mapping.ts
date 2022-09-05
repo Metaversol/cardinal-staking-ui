@@ -9,6 +9,8 @@ export enum TokenStandard {
   Fungible = 1,
   // Non fungible are all unique
   NonFungible = 2,
+  // No receipt
+  None = 3,
 }
 
 export type Analytic = {
@@ -566,7 +568,7 @@ export const stakePoolMetadatas: StakePoolMetadata[] = [
     receiptType: ReceiptType.Original,
     imageUrl:
       'https://cdn.discordapp.com/attachments/475411995273854976/987098707449241600/logo_2.png',
-    maxStaked: 1978,
+    maxStaked: 1969,
     colors: {
       primary: '#000000',
       secondary: '#4da1de',
@@ -1173,7 +1175,7 @@ export const stakePoolMetadatas: StakePoolMetadata[] = [
           totals: [
             {
               key: 'Bronze',
-              value: 2351,
+              value: 2352,
             },
             {
               key: 'Silver',
@@ -1200,7 +1202,7 @@ export const stakePoolMetadatas: StakePoolMetadata[] = [
       '4Nmq5mM747qbA53Yik6KFw4G4nvoSRPsJqRSSGJUwWVa'
     ),
     websiteUrl: 'https://warp.moonshinelabs.io/cu',
-    // receiptType: ReceiptType.Original,
+    receiptType: ReceiptType.None,
     tokenStandard: TokenStandard.NonFungible,
     imageUrl:
       'https://www.arweave.net/VYTqLwXIWw4BoI11xJdNfmLv4FcBYaF9nFpQH2ejdek?ext=png',
@@ -1208,12 +1210,10 @@ export const stakePoolMetadatas: StakePoolMetadata[] = [
     backgroundImage:
       'https://shdw-drive.genesysgo.net/5aWZWB6vXbZrf1CNmiM3rAWnzf36Bpuq8rxRYHBzGeGq/swrm_cu_card_1.png',
     colors: {
-      primary: '#233244',
+      primary: '#1EC1E1',
       secondary: '#BBBBBB',
       accent: '#DE38C8',
       fontColor: '#FFFFFF',
-      // fontColorSecondary: '#000000',
-      // backgroundSecondary: '#000000',
     },
     links: [
       {
@@ -1241,5 +1241,22 @@ export const stakePoolMetadatas: StakePoolMetadata[] = [
         value: 'https://warp.moonshinelabs.io/cu-discord',
       },
     ],
+  },
+  {
+    name: '666starmoon',
+    displayName: '666starmoon',
+    stakePoolAddress: new PublicKey(
+      'B72Unafq2Y5DqkeN4BGSZ7gyqVTfXjigNrQkgDPxSCjo'
+    ),
+    websiteUrl: 'https://666starmoon.my.id/',
+    receiptType: ReceiptType.Original,
+    maxStaked: 666,
+    imageUrl:
+      'https://blogger.googleusercontent.com/img/a/AVvXsEgpLctWRvkvrx4lNx2grm2vFx746c8MBf2JxRgpAntlNROCcrRHuysa4cpLgUYprHunkUnK-dNFqu9FKZF8oQEHappoLlTkzIfv4nJa1ozJzhR0VLmo8hr6N7qGpSlMuyyigMoZkyWgIgrmzkAMsYWGesXA0zIPdi6pY3Y0uAZpxgkuJOr0Zc-j5g=s150',
+    colors: {
+      primary: '#698a5e',
+      secondary: '#74c48e',
+      fontColor: '#f2edd4',
+    },
   },
 ]

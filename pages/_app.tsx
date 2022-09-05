@@ -1,15 +1,16 @@
+import '@cardinal/namespaces-components/dist/esm/styles.css'
 import './styles.css'
 import 'antd/dist/antd.dark.css'
-import '@cardinal/namespaces-components/dist/esm/styles.css'
-import type { AppProps } from 'next/app'
+
+import { WalletIdentityProvider } from '@cardinal/namespaces-components'
 import { WalletProvider } from '@solana/wallet-adapter-react'
-import { getWalletAdapters } from '@solana/wallet-adapter-wallets'
 import { WalletModalProvider } from '@solana/wallet-adapter-react-ui'
+import { getWalletAdapters } from '@solana/wallet-adapter-wallets'
+import type { AppProps } from 'next/app'
 import {
   EnvironmentProvider,
   getInitialProps,
 } from 'providers/EnvironmentProvider'
-import { WalletIdentityProvider } from '@cardinal/namespaces-components'
 import { UTCNowProvider } from 'providers/UTCNowProvider'
 import { QueryClient, QueryClientProvider } from 'react-query'
 import { ReactQueryDevtools } from 'react-query/devtools'
@@ -24,8 +25,6 @@ export const queryClient = new QueryClient({
   },
 })
 
-export const DEBUG = false
-
 const App = ({
   Component,
   pageProps,
@@ -39,7 +38,7 @@ const App = ({
             <QueryClientProvider client={queryClient}>
               <>
                 <Component {...pageProps} />
-                {DEBUG && <ReactQueryDevtools initialIsOpen={false} />}
+                <ReactQueryDevtools initialIsOpen={false} />
               </>
             </QueryClientProvider>
           </WalletModalProvider>

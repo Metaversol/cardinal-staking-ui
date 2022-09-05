@@ -26,12 +26,12 @@ const HOST_MAPPINGS = [
     hostname: 'stake.rebellionbots.io',
   },
   {
-    name: 'moonshine-labs',
-    hostname: 'stake.moonshinelabs.io',
-  },
-  {
     name: 'computation-units',
     hostname: 'swarmstake.moonshinelabs.io',
+  },
+  {
+    name: 'moonshine-labs',
+    hostname: 'stake.moonshinelabs.io',
   },
 ]
 
@@ -40,6 +40,7 @@ const nextConfig = {
   reactStrictMode: true,
   env: {
     MAINNET_PRIMARY: process.env.MAINNET_PRIMARY,
+    MAINNET_SECONDARY: process.env.MAINNET_SECONDARY,
     BASE_CLUSTER: process.env.BASE_CLUSTER,
   },
   async rewrites() {
