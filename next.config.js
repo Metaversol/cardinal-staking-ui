@@ -1,29 +1,37 @@
 const { withSentryConfig } = require('@sentry/nextjs')
 
 const HOST_MAPPINGS = [
+  // {
+  //   name: 'rogue-sharks',
+  //   hostname: 'stake.roguesharks.org',
+  // },
+  // {
+  //   name: 'Orbit',
+  //   hostname: 'stake.unfrgtn.space',
+  // },
+  // {
+  //   name: 'degengod',
+  //   hostname: 'stake.degengod.xyz',
+  // },
+  // {
+  //   name: 'plane-x',
+  //   hostname: 'staking.plane-x.io',
+  // },
+  // {
+  //   name: 'lil-weenees',
+  //   hostname: 'stake.weenee.me',
+  // },
+  // {
+  //   name: 'rebellionbots',
+  //   hostname: 'stake.rebellionbots.io',
+  // },
   {
-    name: 'rogue-sharks',
-    hostname: 'stake.roguesharks.org',
+    name: 'computation-units',
+    hostname: 'swarmstake.moonshinelabs.io',
   },
   {
-    name: 'Orbit',
-    hostname: 'stake.unfrgtn.space',
-  },
-  {
-    name: 'degengod',
-    hostname: 'stake.degengod.xyz',
-  },
-  {
-    name: 'plane-x',
-    hostname: 'staking.plane-x.io',
-  },
-  {
-    name: 'lil-weenees',
-    hostname: 'stake.weenee.me',
-  },
-  {
-    name: 'rebellionbots',
-    hostname: 'stake.rebellionbots.io',
+    name: 'moonshine-labs',
+    hostname: 'stake.moonshinelabs.io',
   },
 ]
 
@@ -80,14 +88,15 @@ const nextConfig = {
   },
 }
 
-module.exports = withSentryConfig(nextConfig, {
+module.exports = nextConfig
+  // module.exports = withSentryConfig(nextConfig, {
   // Additional config options for the Sentry Webpack plugin. Keep in mind that
   // the following options are set automatically, and overriding them is not
   // recommended:
   //   release, url, org, project, authToken, configFile, stripPrefix,
   //   urlPrefix, include, ignore
 
-  silent: true, // Suppresses all logs
+  // silent: true, // Suppresses all logs
   // For all available options, see:
   // https://github.com/getsentry/sentry-webpack-plugin#options.
-})
+// })
