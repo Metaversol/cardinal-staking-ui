@@ -30,8 +30,20 @@ const HOST_MAPPINGS = [
     hostname: 'swarmstake.moonshinelabs.io',
   },
   {
+    name: 'computation-units',
+    hostname: 'compute.moonshinelabs.io',
+  },
+  {
     name: 'moonshine-labs',
     hostname: 'stake.moonshinelabs.io',
+  },
+  {
+    name: 'moonshine-labs',
+    hostname: 'distill.moonshinelabs.io',
+  },
+  {
+    name: 'test-guys',
+    hostname: 'research.moonshinelabs.io',
   },
 ]
 

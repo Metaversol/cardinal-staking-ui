@@ -1213,6 +1213,59 @@ export const stakePoolMetadatas: StakePoolMetadata[] = [
     ],
   },
   {
+    name: 'test-guys',
+    displayName: 'Test Guys',
+    nameInHeader: true,
+    stakePoolAddress: new PublicKey(
+      'z4x4twXzrw8XVEFqQs9EcmgeXfhMqRpwYVpJEeRAbVN'
+    ),
+    websiteUrl: 'https://warp.moonshinelabs.io/caps',
+    receiptType: ReceiptType.Original,
+    tokenStandard: TokenStandard.NonFungible,
+    imageUrl:
+      'https://www.arweave.net/DXw0PO5-EZlx26duubW157IfvpiQvjbAoM5VFCMFEcI?ext=png',
+    maxStaked: 896,
+    backgroundImage:
+      'https://shdw-drive.genesysgo.net/5aWZWB6vXbZrf1CNmiM3rAWnzf36Bpuq8rxRYHBzGeGq/tg169.png',
+    styles: {
+      fontFamily: 'Roboto Serif',
+    },
+    colors: {
+      primary: '#7928CA',
+      secondary: '#4a148c',
+      accent: '#DE38C8',
+      fontColor: '#FFFFFF',
+      // fontColorSecondary: '#DE38C8',
+      // backgroundSecondary: '#DE38C8',
+    },
+    links: [
+      {
+        text: 'HOME',
+        value: 'https://warp.moonshinelabs.io/caps-home',
+      },
+      {
+        text: 'GAME',
+        value: 'https://warp.moonshinelabs.io/caps-game',
+      },
+      {
+        text: 'MINT',
+        value: 'https://warp.moonshinelabs.io/caps-mint',
+      },
+      {
+        text: 'BUY',
+        value: 'https://warp.moonshinelabs.io/caps-buy',
+      },
+      {
+        text: 'TWITTER',
+        value: 'https://warp.moonshinelabs.io/caps-twitter',
+      },
+      {
+        text: 'DISCORD',
+        value: 'https://warp.moonshinelabs.io/caps-discord',
+      },
+    ],
+  },
+  {
     name: 'computation-units',
     displayName: 'Computation Units',
     nameInHeader: true,
