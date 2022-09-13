@@ -1224,7 +1224,7 @@ export const stakePoolMetadatas: StakePoolMetadata[] = [
     tokenStandard: TokenStandard.NonFungible,
     imageUrl:
       'https://www.arweave.net/DXw0PO5-EZlx26duubW157IfvpiQvjbAoM5VFCMFEcI?ext=png',
-    maxStaked: 896,
+    maxStaked: 1111,
     backgroundImage:
       'https://shdw-drive.genesysgo.net/5aWZWB6vXbZrf1CNmiM3rAWnzf36Bpuq8rxRYHBzGeGq/tg1692.png',
     styles: {
