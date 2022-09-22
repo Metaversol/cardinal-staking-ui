@@ -44,12 +44,16 @@ export type StakePoolMetadata = {
   notFound?: boolean
   // Optional hostname to remap
   hostname?: string
+  // Optional hide footer
+  hideFooter?: boolean
   // Optional config to link redirect to page when you click on this pool
   redirect?: string
   // Hide allowed tokens style
   hideAllowedTokens?: boolean
   // styles to apply to the whole stake pool
   styles?: CSSProperties
+  // Contrast homepage background
+  contrastHomepageBkg?: boolean
   // Colors object to style the stake page
   colors?: {
     primary: string
@@ -59,6 +63,12 @@ export type StakePoolMetadata = {
     fontColorSecondary?: string
     backgroundSecondary?: string
   }
+  // Disallow regions based on IP address
+  disallowRegions?: { code: string; subdivision?: string }[]
+  // If the logo should be displayed with paddding
+  logoPadding?: boolean
+  // Optional social links
+  socialLinks?: []
   // Image url to be used as the icon in the pool selector and the header
   imageUrl?: string
   // Secondary image url to be used next to the icon in the pool selector and the header
@@ -477,6 +487,8 @@ export const stakePoolMetadatas: StakePoolMetadata[] = [
     websiteUrl: 'https://www.roguesharks.org/',
     receiptType: ReceiptType.Original,
     hostname: 'stake.roguesharks',
+    contrastHomepageBkg: true,
+    hideFooter: true,
     maxStaked: 4991, // update with collection size
     imageUrl: '/logos/rogue-sharks.svg',
     tokenStandard: TokenStandard.NonFungible,
@@ -502,8 +514,7 @@ export const stakePoolMetadatas: StakePoolMetadata[] = [
     websiteUrl: 'https://cannaverse.gg/',
     receiptType: ReceiptType.Original,
     maxStaked: 1700,
-    imageUrl:
-      'https://cannaverse.gg/wp-content/uploads/2022/05/cannaverse-white-logo-full-1-e1652295225261.png',
+    imageUrl: './logos/cannaverse.png',
     colors: {
       primary: '#211F20',
       secondary: '#211F20',
@@ -579,6 +590,7 @@ export const stakePoolMetadatas: StakePoolMetadata[] = [
     name: 'Orbit',
     displayName: 'Orbit',
     hostname: 'stake.unfrgtn.space',
+    hideFooter: true,
     stakePoolAddress: new PublicKey(
       '4TMt9ehagkdFgZJBnyBRBTNfXUD8xLX18JyPVeGDpaKb'
     ),
@@ -586,7 +598,7 @@ export const stakePoolMetadatas: StakePoolMetadata[] = [
     receiptType: ReceiptType.Original,
     imageUrl:
       'https://cdn.discordapp.com/attachments/475411995273854976/987098707449241600/logo_2.png',
-    maxStaked: 1969,
+    maxStaked: 1956,
     colors: {
       primary: '#000000',
       secondary: '#4da1de',
@@ -867,6 +879,7 @@ export const stakePoolMetadatas: StakePoolMetadata[] = [
     websiteUrl: 'https://1space.me/',
     receiptType: ReceiptType.Original,
     hostname: 'stake.1space.me',
+    hideFooter: true,
     imageUrl: 'https://1space.me/images/os-logo-white.jpeg',
     maxStaked: 200,
     links: [
@@ -1003,6 +1016,7 @@ export const stakePoolMetadatas: StakePoolMetadata[] = [
       'AzFdEKtqanvPeQ7chcKNXJHAzcZRLc8GbkSzG8JUrT4W'
     ),
     hostname: 'stake.rebellionbots.io',
+    hideFooter: true,
     websiteUrl: 'https://www.rebellionbots.io',
     receiptType: ReceiptType.Original,
     maxStaked: 801, // update with collection size
@@ -1088,7 +1102,6 @@ export const stakePoolMetadatas: StakePoolMetadata[] = [
     stakePoolAddress: new PublicKey(
       '3JXoAsm4YZGzC2VGtSBdN8EX36wW8uuoXX9nWFqamUu2'
     ),
-    hidden: true,
     websiteUrl: 'https://www.hoa.house/',
     receiptType: ReceiptType.Original,
     tokenStandard: TokenStandard.NonFungible,
@@ -1102,6 +1115,277 @@ export const stakePoolMetadatas: StakePoolMetadata[] = [
       secondary: '#10abf0',
       backgroundSecondary: '#182443',
     },
+  },
+  {
+    name: 'parcl-san-francisco',
+    displayName: 'Parcl San Francisco',
+    stakePoolAddress: new PublicKey(
+      '3woMMfxPCzyGHdtosNtWLKZCWNvok4k3Eup97eayXxWk'
+    ),
+    websiteUrl: 'https://parcl.co/',
+    receiptType: ReceiptType.None,
+    tokenStandard: TokenStandard.Fungible,
+    hideAllowedTokens: true,
+    nameInHeader: true,
+    imageUrl: '/logos/parcl-san-francisco.png',
+    backgroundImage: '/logos/parcl-bg.png',
+    colors: {
+      primary: '#0d1939',
+      secondary: '#10abf0',
+      backgroundSecondary: '#182443',
+    },
+    links: [
+      { text: 'San Francisco', value: '/parcl-san-francisco' },
+      { text: 'Brooklyn', value: '/parcl-brooklyn' },
+      { text: 'Phoenix', value: '/parcl-phoenix' },
+      { text: 'Manhattan', value: '/parcl-manhattan' },
+      { text: 'Los Angeles', value: '/parcl-los-angeles' },
+      { text: 'Miami', value: '/parcl-miami' },
+    ],
+    disallowRegions: [
+      { code: 'US' }, // united states
+      { code: 'CU' }, // cuba
+      { code: 'IR' }, // iran
+      { code: 'LY' }, // libya
+      { code: 'IQ' }, // iraq
+      { code: 'LB' }, // lebanon
+      { code: 'CN' }, // china
+      { code: 'CF' }, // central african republic
+      { code: 'SS' }, // south sudan
+      { code: 'SS' }, // sudan (north)
+      { code: 'SY' }, // syria
+      { code: 'SO' }, // somalia
+      { code: 'VE' }, // venezuela
+      { code: 'YE' }, // yemen
+      { code: 'RU' }, // russia
+      { code: 'UA', subdivision: '43' }, // the crimea
+    ],
+  },
+  {
+    name: 'parcl-miami',
+    displayName: 'Parcl Miami',
+    stakePoolAddress: new PublicKey(
+      '74Zf3B2y6GVsHpoUQ6My8NktzHjT7Cgn6VRkUB946C62'
+    ),
+    websiteUrl: 'https://parcl.co/',
+    receiptType: ReceiptType.None,
+    tokenStandard: TokenStandard.Fungible,
+    hideAllowedTokens: true,
+    nameInHeader: true,
+    imageUrl: '/logos/parcl-miami.png',
+    backgroundImage: '/logos/parcl-bg.png',
+    colors: {
+      primary: '#0d1939',
+      secondary: '#10abf0',
+      backgroundSecondary: '#182443',
+    },
+    links: [
+      { text: 'San Francisco', value: '/parcl-san-francisco' },
+      { text: 'Brooklyn', value: '/parcl-brooklyn' },
+      { text: 'Phoenix', value: '/parcl-phoenix' },
+      { text: 'Manhattan', value: '/parcl-manhattan' },
+      { text: 'Los Angeles', value: '/parcl-los-angeles' },
+      { text: 'Miami', value: '/parcl-miami' },
+    ],
+    disallowRegions: [
+      { code: 'US' }, // united states
+      { code: 'CU' }, // cuba
+      { code: 'IR' }, // iran
+      { code: 'LY' }, // libya
+      { code: 'IQ' }, // iraq
+      { code: 'LB' }, // lebanon
+      { code: 'CN' }, // china
+      { code: 'CF' }, // central african republic
+      { code: 'SS' }, // south sudan
+      { code: 'SS' }, // sudan (north)
+      { code: 'SY' }, // syria
+      { code: 'SO' }, // somalia
+      { code: 'VE' }, // venezuela
+      { code: 'YE' }, // yemen
+      { code: 'RU' }, // russia
+      { code: 'UA', subdivision: '43' }, // the crimea
+    ],
+  },
+  {
+    name: 'parcl-los-angeles',
+    displayName: 'Parcl Los Angeles',
+    stakePoolAddress: new PublicKey(
+      '8kbX53gQnpXqHQKg4Z3T1uSHsDHaP7Q7VnMbfnBWtJvk'
+    ),
+    websiteUrl: 'https://parcl.co/',
+    receiptType: ReceiptType.None,
+    tokenStandard: TokenStandard.Fungible,
+    hideAllowedTokens: true,
+    nameInHeader: true,
+    imageUrl: '/logos/parcl-los-angeles.png',
+    backgroundImage: '/logos/parcl-bg.png',
+    colors: {
+      primary: '#0d1939',
+      secondary: '#10abf0',
+      backgroundSecondary: '#182443',
+    },
+    links: [
+      { text: 'San Francisco', value: '/parcl-san-francisco' },
+      { text: 'Brooklyn', value: '/parcl-brooklyn' },
+      { text: 'Phoenix', value: '/parcl-phoenix' },
+      { text: 'Manhattan', value: '/parcl-manhattan' },
+      { text: 'Los Angeles', value: '/parcl-los-angeles' },
+      { text: 'Miami', value: '/parcl-miami' },
+    ],
+    disallowRegions: [
+      { code: 'US' }, // united states
+      { code: 'CU' }, // cuba
+      { code: 'IR' }, // iran
+      { code: 'LY' }, // libya
+      { code: 'IQ' }, // iraq
+      { code: 'LB' }, // lebanon
+      { code: 'CN' }, // china
+      { code: 'CF' }, // central african republic
+      { code: 'SS' }, // south sudan
+      { code: 'SS' }, // sudan (north)
+      { code: 'SY' }, // syria
+      { code: 'SO' }, // somalia
+      { code: 'VE' }, // venezuela
+      { code: 'YE' }, // yemen
+      { code: 'RU' }, // russia
+      { code: 'UA', subdivision: '43' }, // the crimea
+    ],
+  },
+  {
+    name: 'parcl-manhattan',
+    displayName: 'Parcl Manhattan',
+    stakePoolAddress: new PublicKey(
+      '8ZBEzrvBZiSnCS9cQHpL8orWvMukPCZ4y4nyxzZ8H9i'
+    ),
+    websiteUrl: 'https://parcl.co/',
+    receiptType: ReceiptType.None,
+    tokenStandard: TokenStandard.Fungible,
+    hideAllowedTokens: true,
+    nameInHeader: true,
+    imageUrl: '/logos/parcl-manhattan.png',
+    backgroundImage: '/logos/parcl-bg.png',
+    colors: {
+      primary: '#0d1939',
+      secondary: '#10abf0',
+      backgroundSecondary: '#182443',
+    },
+    links: [
+      { text: 'San Francisco', value: '/parcl-san-francisco' },
+      { text: 'Brooklyn', value: '/parcl-brooklyn' },
+      { text: 'Phoenix', value: '/parcl-phoenix' },
+      { text: 'Manhattan', value: '/parcl-manhattan' },
+      { text: 'Los Angeles', value: '/parcl-los-angeles' },
+      { text: 'Miami', value: '/parcl-miami' },
+    ],
+    disallowRegions: [
+      { code: 'US' }, // united states
+      { code: 'CU' }, // cuba
+      { code: 'IR' }, // iran
+      { code: 'LY' }, // libya
+      { code: 'IQ' }, // iraq
+      { code: 'LB' }, // lebanon
+      { code: 'CN' }, // china
+      { code: 'CF' }, // central african republic
+      { code: 'SS' }, // south sudan
+      { code: 'SS' }, // sudan (north)
+      { code: 'SY' }, // syria
+      { code: 'SO' }, // somalia
+      { code: 'VE' }, // venezuela
+      { code: 'YE' }, // yemen
+      { code: 'RU' }, // russia
+      { code: 'UA', subdivision: '43' }, // the crimea
+    ],
+  },
+
+  {
+    name: 'parcl-brooklyn',
+    displayName: 'Parcl Brooklyn',
+    stakePoolAddress: new PublicKey(
+      '9jnTHkJzxL14dE2CxAufBsTa19oeuNSMBuyqzZP1kDYh'
+    ),
+    websiteUrl: 'https://parcl.co/',
+    receiptType: ReceiptType.None,
+    tokenStandard: TokenStandard.Fungible,
+    hideAllowedTokens: true,
+    nameInHeader: true,
+    imageUrl: '/logos/parcl-brooklyn.png',
+    backgroundImage: '/logos/parcl-bg.png',
+    colors: {
+      primary: '#0d1939',
+      secondary: '#10abf0',
+      backgroundSecondary: '#182443',
+    },
+    links: [
+      { text: 'San Francisco', value: '/parcl-san-francisco' },
+      { text: 'Brooklyn', value: '/parcl-brooklyn' },
+      { text: 'Phoenix', value: '/parcl-phoenix' },
+      { text: 'Manhattan', value: '/parcl-manhattan' },
+      { text: 'Los Angeles', value: '/parcl-los-angeles' },
+      { text: 'Miami', value: '/parcl-miami' },
+    ],
+    disallowRegions: [
+      { code: 'US' }, // united states
+      { code: 'CU' }, // cuba
+      { code: 'IR' }, // iran
+      { code: 'LY' }, // libya
+      { code: 'IQ' }, // iraq
+      { code: 'LB' }, // lebanon
+      { code: 'CN' }, // china
+      { code: 'CF' }, // central african republic
+      { code: 'SS' }, // south sudan
+      { code: 'SS' }, // sudan (north)
+      { code: 'SY' }, // syria
+      { code: 'SO' }, // somalia
+      { code: 'VE' }, // venezuela
+      { code: 'YE' }, // yemen
+      { code: 'RU' }, // russia
+      { code: 'UA', subdivision: '43' }, // the crimea
+    ],
+  },
+  {
+    name: 'parcl-phoenix',
+    displayName: 'Parcl Phoenix',
+    stakePoolAddress: new PublicKey(
+      'ESbcGhaddmgKWkW63txisKP6HwS3491brbP2hJuTrVY6'
+    ),
+    websiteUrl: 'https://parcl.co/',
+    receiptType: ReceiptType.None,
+    tokenStandard: TokenStandard.Fungible,
+    hideAllowedTokens: true,
+    nameInHeader: true,
+    imageUrl: '/logos/parcl-phoenix.png',
+    backgroundImage: '/logos/parcl-bg.png',
+    colors: {
+      primary: '#0d1939',
+      secondary: '#10abf0',
+      backgroundSecondary: '#182443',
+    },
+    links: [
+      { text: 'San Francisco', value: '/parcl-san-francisco' },
+      { text: 'Brooklyn', value: '/parcl-brooklyn' },
+      { text: 'Phoenix', value: '/parcl-phoenix' },
+      { text: 'Manhattan', value: '/parcl-manhattan' },
+      { text: 'Los Angeles', value: '/parcl-los-angeles' },
+      { text: 'Miami', value: '/parcl-miami' },
+    ],
+    disallowRegions: [
+      { code: 'US' }, // united states
+      { code: 'CU' }, // cuba
+      { code: 'IR' }, // iran
+      { code: 'LY' }, // libya
+      { code: 'IQ' }, // iraq
+      { code: 'LB' }, // lebanon
+      { code: 'CN' }, // china
+      { code: 'CF' }, // central african republic
+      { code: 'SS' }, // south sudan
+      { code: 'SS' }, // sudan (north)
+      { code: 'SY' }, // syria
+      { code: 'SO' }, // somalia
+      { code: 'VE' }, // venezuela
+      { code: 'YE' }, // yemen
+      { code: 'RU' }, // russia
+      { code: 'UA', subdivision: '43' }, // the crimea
+    ],
   },
   {
     name: 'the-suites',
@@ -1130,6 +1414,34 @@ export const stakePoolMetadatas: StakePoolMetadata[] = [
       primary: '#242a36',
       secondary: '#4f2a89',
       accent: '#b69b68',
+      fontColor: '#e6e7e8',
+    },
+  },
+  {
+    name: 'meta-hunters',
+    displayName: 'Meta Hunters',
+    nameInHeader: true,
+    stakePoolAddress: new PublicKey(
+      'AjuWPVKFZBLZSSJS2xso9zBsfKSzXt14ebEMH6DbAAKg'
+    ),
+    websiteUrl: 'https://www.doubleupnft.com/',
+    receiptType: ReceiptType.Original,
+    tokenStandard: TokenStandard.NonFungible,
+    imageUrl:
+      'https://pbs.twimg.com/profile_images/1536554684172734464/T9A_Y2wl_400x400.jpg',
+    links: [
+      {
+        text: 'Twitter',
+        value: 'https://twitter.com/metahuntersnft?lang=en',
+      },
+      {
+        text: 'Discord',
+        value: 'https://discord.com/invite/Xyzt8qpM',
+      },
+    ],
+    colors: {
+      primary: '#020208',
+      secondary: '#166ca4',
       fontColor: '#e6e7e8',
     },
   },
@@ -1316,6 +1628,7 @@ export const stakePoolMetadatas: StakePoolMetadata[] = [
   {
     name: '666starmoon',
     displayName: '666starmoon',
+    hidden: true,
     stakePoolAddress: new PublicKey(
       'B72Unafq2Y5DqkeN4BGSZ7gyqVTfXjigNrQkgDPxSCjo'
     ),
@@ -1381,6 +1694,115 @@ export const stakePoolMetadatas: StakePoolMetadata[] = [
       {
         text: 'MINT',
         value: 'https://www.sweetapomint.org/',
+      },
+    ],
+  },
+  {
+    name: 'annoyed-rex-udder-chaos',
+    displayName: 'Annoyed Rex Club x Udder Chaos',
+    stakePoolAddress: new PublicKey(
+      '9NvrvM3Ji5RbbJtuAqXAzQL6cwHAv7n4KQQoUyUHqgT1'
+    ),
+    websiteUrl: 'https://udderchaos.io/',
+    imageUrl:
+      'https://oh66ydzlqmacybmraeswa7nxlpv4fogsvikmihqosj3rel6qixfa.arweave.net/cf3sDyuDACwFkQElYH23W-vCuNKqFMQeDpJ3Ei_QRco',
+    maxStaked: 500,
+    receiptType: ReceiptType.Original,
+    tokenStandard: TokenStandard.NonFungible,
+    hideAllowedTokens: true,
+    links: [
+      {
+        text: 'Discord',
+        value: 'https://discord.gg/udderchaos',
+      },
+      {
+        text: 'Buy',
+        value: 'https://magiceden.io/marketplace/arcxuc',
+      },
+    ],
+    colors: {
+      primary: '#000000',
+      secondary: '#BD38F3',
+      accent: '#8B2AB4',
+      fontColor: '#FFFFFF',
+    },
+  },
+  {
+    name: 'steamland',
+    displayName: 'Harvesting - Steamland',
+    stakePoolAddress: new PublicKey(
+      '5n9G7o9ZZFmfx4dcbd4HgNYcGWFiQ2wGKaKHYT8bWDf7'
+    ),
+    contrastHomepageBkg: true,
+    maxStaked: 2222,
+    receiptType: ReceiptType.Original,
+    websiteUrl: 'https://steamland.io',
+    hostname: 'harvest.steamland.io',
+    imageUrl:
+      'https://raw.githubusercontent.com/Steamland/images/main/harvest_logo.png',
+    hidden: true,
+    styles: {
+      fontFamily: 'Industry, sans-serif',
+      fontWeight: 500,
+    },
+    backgroundImage:
+      'https://raw.githubusercontent.com/Steamland/images/main/harvesting_background.png',
+    tokenStandard: TokenStandard.NonFungible,
+    hideAllowedTokens: true,
+    colors: {
+      primary: '#1A1A1D',
+      secondary: '#9e333f',
+      accent: '#313063',
+      fontColor: '#FFFFFF',
+      fontColorSecondary: '#FFFFFF',
+      backgroundSecondary: '#4E4E50',
+    },
+  },
+  {
+    name: 'Pixel-Y00ts',
+    displayName: 'Pixel Y0ots',
+    nameInHeader: true,
+    stakePoolAddress: new PublicKey(
+      '6JAjWAWhzAdZRVXmLKpzXy8idqPY3Jb5AUUXzBPm3FGt'
+    ),
+    hostname: 'stake.pixel-y00ts',
+    hideFooter: true,
+    hideAllowedTokens: true,
+    websiteUrl: '',
+    receiptType: ReceiptType.Original,
+    tokenStandard: TokenStandard.NonFungible,
+    // styles to apply to the whole stake pool
+    styles: {
+      fontFamily: 'Industry, sans-serif',
+      fontWeight: 500,
+    },
+    // Colors object to style the stake page
+    colors: {
+      primary: '#181818',
+      secondary: '#177b7b',
+      backgroundSecondary: 'rgb(24 24 24 / 90%)',
+      fontColor: '#F2F2F2',
+    },
+    imageUrl:
+      'https://raw.githubusercontent.com/DicersN00b/loots-logo/main/logo.png',
+    // Background image for poolq
+    backgroundImage:
+      'https://raw.githubusercontent.com/DicersN00b/loots-logo/main/BG%20STAKING.png',
+
+    // Website url if specified will be navigated to when the image in the header is clicked
+    maxStaked: 10000,
+    links: [
+      {
+        text: 'Twitter',
+        value: 'https://twitter.com/PY00ts',
+      },
+      {
+        text: 'Discord',
+        value: 'https://discord.com/invite/pixely00ts',
+      },
+      {
+        text: 'Buy Pixel Y00ts',
+        value: 'https://magiceden.io/marketplace/pixel_yoots',
       },
     ],
   },

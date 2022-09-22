@@ -21,6 +21,8 @@ import type { TokenListData } from './useTokenList'
 import { useTokenList } from './useTokenList'
 import { useWalletId } from './useWalletId'
 
+export const TOKEN_DATAS_KEY = 'tokenDatas'
+
 export type AllowedTokenData = BaseTokenData & {
   metadata?: any
   stakeEntry?: AccountData<StakeEntryData>
@@ -105,12 +107,14 @@ export const useAllowedTokenDatas = (showFungibleTokens: boolean) => {
   const { data: stakeAuthorizations } = useStakeAuthorizationsForPool()
   return useQuery<AllowedTokenData[] | undefined>(
     [
+      TOKEN_DATAS_KEY,
       'allowedTokenDatas',
       stakePoolId?.toString(),
       stakePool?.pubkey.toString(),
       walletId?.toString(),
       showFungibleTokens,
       tokenList?.length,
+      stakeAuthorizations?.map((s) => s.pubkey.toString()).join(),
     ],
     async () => {
       if (!stakePoolId || !stakePool || !walletId) return
@@ -176,7 +180,15 @@ export const useAllowedTokenDatas = (showFungibleTokens: boolean) => {
         baseTokenDatas,
         stakePool,
         stakeAuthorizations
-      ).filter((tokenData) => showFungibleTokens === !!tokenData.tokenListData)
+      ).filter(
+        (tokenData) =>
+          showFungibleTokens ===
+          (!!tokenData.tokenListData ||
+            tokenData.metaplexData?.data.tokenStandard ===
+              metaplex.TokenStandard.Fungible ||
+            tokenData.metaplexData?.data.tokenStandard ===
+              metaplex.TokenStandard.FungibleAsset)
+      )
 
       const stakeEntryIds = await Promise.all(
         allowedTokens.map(

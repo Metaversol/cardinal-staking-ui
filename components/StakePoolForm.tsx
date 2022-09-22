@@ -1,29 +1,30 @@
 /* eslint-disable @typescript-eslint/ban-types */
 import type { AccountData } from '@cardinal/common'
 import { withFindOrInitAssociatedTokenAccount } from '@cardinal/common'
-import { executeTransaction, handleError } from '@cardinal/staking'
+import { executeTransaction } from '@cardinal/staking'
 import type { RewardDistributorData } from '@cardinal/staking/dist/cjs/programs/rewardDistributor'
 import { RewardDistributorKind } from '@cardinal/staking/dist/cjs/programs/rewardDistributor'
 import type { StakePoolData } from '@cardinal/staking/dist/cjs/programs/stakePool'
-import type { Wallet } from '@metaplex/js'
 import { BN } from '@project-serum/anchor'
 import * as splToken from '@solana/spl-token'
 import { useWallet } from '@solana/wallet-adapter-react'
 import { Keypair, PublicKey, Transaction } from '@solana/web3.js'
+import { AsyncButton } from 'common/Button'
+import { handleError } from 'common/errors'
 import { FormFieldTitleInput } from 'common/FormFieldInput'
 import { FormInput } from 'common/FormInput'
 import { LoadingSpinner } from 'common/LoadingSpinner'
 import { notify } from 'common/Notification'
 import { tryFormatInput, tryParseInput } from 'common/units'
 import { tryPublicKey } from 'common/utils'
+import { asWallet } from 'common/Wallets'
 import { useFormik } from 'formik'
 import { useEnvironmentCtx } from 'providers/EnvironmentProvider'
 import { useMemo, useState } from 'react'
-import { TailSpin } from 'react-loader-spinner'
 import Select from 'react-select'
 import * as Yup from 'yup'
 
-const publicKeyValidationTest = (value: string | undefined): boolean => {
+export const publicKeyValidationTest = (value: string | undefined): boolean => {
   return tryPublicKey(value) ? true : false
 }
 
@@ -205,7 +206,7 @@ export function StakePoolForm({
           if (transaction.instructions.length > 0) {
             await executeTransaction(
               connection,
-              wallet as Wallet,
+              asWallet(wallet),
               transaction,
               {}
             )
@@ -855,11 +856,11 @@ export function StakePoolForm({
           )}
         </div>
       </div>
-      <button
+
+      <AsyncButton
         disabled={Boolean(
           values.rewardDistributorKind && submitDisabled && type !== 'update'
         )}
-        type="button"
         onClick={async () => {
           try {
             setLoading(true)
@@ -868,22 +869,11 @@ export function StakePoolForm({
             setLoading(false)
           }
         }}
+        inlineLoader
+        className="mt-4 w-max"
       >
-        <div
-          className={`mt-4 inline-block rounded-md bg-blue-700 px-4 py-2 ${
-            submitDisabled && values.rewardDistributorKind && type !== 'update'
-              ? 'opacity-50'
-              : ''
-          }`}
-        >
-          {loading && (
-            <div className="mr-2 inline-block">
-              <TailSpin color="#fff" height={15} width={15} />
-            </div>
-          )}
-          {type.charAt(0).toUpperCase() + type.slice(1)} Pool
-        </div>
-      </button>
+        {type.charAt(0).toUpperCase() + type.slice(1)} Pool
+      </AsyncButton>
     </form>
   )
 }
