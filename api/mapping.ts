@@ -1448,6 +1448,7 @@ export const stakePoolMetadatas: StakePoolMetadata[] = [
   {
     name: 'moonshine-labs',
     displayName: 'Moonshine Labs',
+    hostname: 'distill.moonshinelabs.io',
     nameInHeader: true,
     stakePoolAddress: new PublicKey(
       '79ZGVZuP93wChsjiqvpCUZtTq6xYc8Edaid4ng8BHxp1'
@@ -1527,6 +1528,7 @@ export const stakePoolMetadatas: StakePoolMetadata[] = [
   {
     name: 'test-guys',
     displayName: 'Test Guys',
+    hostname: 'research.moonshinelabs.io',
     nameInHeader: true,
     stakePoolAddress: new PublicKey(
       'z4x4twXzrw8XVEFqQs9EcmgeXfhMqRpwYVpJEeRAbVN'
@@ -1580,6 +1582,7 @@ export const stakePoolMetadatas: StakePoolMetadata[] = [
   {
     name: 'computation-units',
     displayName: 'Computation Units',
+    hostname: 'compute.moonshinelabs.io',
     nameInHeader: true,
     stakePoolAddress: new PublicKey(
       '4Nmq5mM747qbA53Yik6KFw4G4nvoSRPsJqRSSGJUwWVa'
