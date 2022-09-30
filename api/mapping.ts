@@ -1458,7 +1458,7 @@ export const stakePoolMetadatas: StakePoolMetadata[] = [
     tokenStandard: TokenStandard.NonFungible,
     imageUrl:
       'https://www.arweave.net/IoihJxVlVjKp2x46GpnoQNi1pRWNJiLBI4FQiXK0SPA?ext=png',
-    maxStaked: 3546,
+    maxStaked: 4996,
     backgroundImage:
       'https://shdw-drive.genesysgo.net/5aWZWB6vXbZrf1CNmiM3rAWnzf36Bpuq8rxRYHBzGeGq/msl_caps_card_1.png',
     styles: {
@@ -1472,32 +1472,32 @@ export const stakePoolMetadatas: StakePoolMetadata[] = [
       // fontColorSecondary: '#DE38C8',
       // backgroundSecondary: '#DE38C8',
     },
-    analytics: [
-      {
-        metadata: {
-          key: 'Pass Type',
-          type: 'staked',
-          totals: [
-            {
-              key: 'Bronze',
-              value: 2352,
-            },
-            {
-              key: 'Silver',
-              value: 1085,
-            },
-            {
-              key: 'Gold',
-              value: 98,
-            },
-            {
-              key: 'Platinum',
-              value: 7,
-            },
-          ],
-        },
-      },
-    ],
+    // analytics: [
+    //   {
+    //     metadata: {
+    //       key: 'Pass Type',
+    //       type: 'staked',
+    //       totals: [
+    //         {
+    //           key: 'Bronze',
+    //           value: 2352,
+    //         },
+    //         {
+    //           key: 'Silver',
+    //           value: 1085,
+    //         },
+    //         {
+    //           key: 'Gold',
+    //           value: 98,
+    //         },
+    //         {
+    //           key: 'Platinum',
+    //           value: 7,
+    //         },
+    //       ],
+    //     },
+    //   },
+    // ],
     links: [
       {
         text: 'HOME',
