@@ -24,7 +24,7 @@ export const ENVIRONMENTS: Environment[] = [
   {
     label: 'mainnet-beta',
     primary:
-      process.env.MAINNET_PRIMARY || 'https://solana-api.projectserum.com',
+      process.env.MAINNET_PRIMARY || 'https://solana-mainnet.g.alchemy.com/v2/aH2NzsqCpRLSoxJMmczyb9c161jQsLVp',
     secondary:
       process.env.MAINNET_SECONDARY || 'https://solana-api.projectserum.com',
   },
