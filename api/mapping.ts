@@ -34,6 +34,8 @@ export type StakePoolMetadata = {
   nameInHeader?: boolean
   // Publickey for this stake pool
   stakePoolAddress: PublicKey
+  // Description for this stake pool
+  description?: string
   // Default receipt type. Setting this will remove the option for the user to choose which receipt type to use
   receiptType?: ReceiptType
   // Default empty. Setting this will tell the UI to only show tokens of that standard. Supports fungible or non-fungible
@@ -102,22 +104,95 @@ export const stakePoolMetadatas: StakePoolMetadata[] = [
   //     secondary: 'rgb(157,120,138, 0.6)',
   //   },
   // },
+
   {
-    name: 'yojimbo',
-    displayName: 'Yojimbo Degens Festival(stake)',
-    nameInHeader: true,
+    name: 'shadiesboosted',
+    displayName: 'SHADIES BOOSTED 2X STAKING',
     stakePoolAddress: new PublicKey(
-      'HRthLdCtH62b6xBMve7uFy5mq9b9h8gwUMeKJm9wTQPs'
+      '29MgtLuX8ByGMZoreUoY7hsP2YY935gJ3wRB1fhiSF8o'
     ),
-    websiteUrl: 'https://twitter.com/YojimboDegens',
-    receiptType: ReceiptType.Original,
-    maxStaked: 4400,
-    imageUrl: 'https://arweave.net/VP9h1qEmWUgaNPYY1hXSR-FTjKAJpxugWAYDGHvZMTg',
+    hostname: 'https://staking2x.theshadyclass.xyz',
+    hidden: false,
+    notFound: false,
+    imageUrl:
+      'https://raw.githubusercontent.com/flipthetip/test-tsc/main/newth.png',
+    // secondaryImageUrl: 'https://raw.githubusercontent.com/flipthetip/test-tsc/main/arx.png',
+    backgroundImage:
+      'https://raw.githubusercontent.com/flipthetip/test-tsc/main/newbg.png',
+    styles: {
+      fontFamily: 'Franklin Gothic Medium',
+      // fontWeight: 500,
+      backgroundSize: 'cover',
+      backgroundPosition: 'center',
+    },
     colors: {
-      primary: 'rgb(207 89 67)',
-      secondary: '#a7594b',
-      accent: '#d35e48',
-      fontColor: '#092037',
+      primary: '#000000',
+      secondary: '#f34d00',
+      accent: '#413F42',
+      fontColor: '#FFFFFF',
+      fontColorSecondary: '#FFFFFF',
+    },
+    // maxStaked: ,
+    receiptType: ReceiptType.Original,
+  },
+  {
+    name: 'shadiesstandard',
+    displayName: 'SHADIES STANDARD STAKING',
+    stakePoolAddress: new PublicKey(
+      'zNt5nnEaL87rG9DT2cxvdVMf8sLBe6qEuZK8D5K4r9M'
+    ),
+    hostname: 'https://staking1x.theshadyclass.xyz',
+    hidden: false,
+    notFound: false,
+    imageUrl:
+      'https://raw.githubusercontent.com/flipthetip/test-tsc/main/newth.png',
+    // secondaryImageUrl: 'https://raw.githubusercontent.com/flipthetip/test-tsc/main/arx.png',
+    backgroundImage:
+      'https://raw.githubusercontent.com/flipthetip/test-tsc/main/newbg.png',
+    styles: {
+      fontFamily: 'Franklin Gothic Medium',
+      // fontWeight: 500,
+      backgroundSize: 'cover',
+      backgroundPosition: 'center',
+    },
+    colors: {
+      primary: '#000000',
+      secondary: '#f34d00',
+      accent: '#413F42',
+      fontColor: '#FFFFFF',
+      fontColorSecondary: '#FFFFFF',
+    },
+    // maxStaked: ,
+    receiptType: ReceiptType.Original,
+  },
+  {
+    name: 'Learn2Earn',
+    displayName: 'Learn 2 Earn DOTS',
+    stakePoolAddress: new PublicKey(
+      'DgrtWV95DP3ix4GFMKDLwqMNZ213KJk9NgM6vmdPtyk1'
+    ),
+    contrastHomepageBkg: true,
+    maxStaked: 5000,
+    receiptType: ReceiptType.Original,
+    websiteUrl: 'https://www.bithq.co/',
+    hostname: 'Learn2Earn.io',
+    imageUrl:
+      'https://cdn.discordapp.com/attachments/989483399477604404/1023947734828449802/DOTS_NFT1.5.png',
+    styles: {
+      fontFamily: 'serif',
+      fontWeight: 500,
+    },
+    backgroundImage:
+      'https://cdn.discordapp.com/attachments/989483399477604404/1024694267282726942/ReliefBlackBackground.jpg',
+    tokenStandard: TokenStandard.NonFungible,
+    hideAllowedTokens: true,
+    colors: {
+      primary: '#000000',
+      secondary: '#FFFFFF',
+      accent: '#000000',
+      fontColor: '#FFFFFF',
+      fontColorSecondary: '#000000',
+      backgroundSecondary: '#000000',
     },
   },
   {
@@ -138,6 +213,9 @@ export const stakePoolMetadatas: StakePoolMetadata[] = [
     stakePoolAddress: new PublicKey(
       '3BZCupFU6X3wYJwgTsKS2vTs4VeMrhSZgx4P2TfzExtP'
     ),
+    logoPadding: true,
+    description:
+      'Blockasset is creating a revolutionary way for fans and athletes to interact and connect with each other by way of multiple touchpoints that provide benefits for both the fan and the athlete.',
     websiteUrl: 'https://hub.blockasset.co/nft-staking-v2',
     imageUrl: '/logos/blockasset.png',
     maxStaked: 11791,
@@ -161,13 +239,6 @@ export const stakePoolMetadatas: StakePoolMetadata[] = [
       accent: '#1fcfb11c',
       fontColor: '#FFFFFF',
     },
-    airdrops: [
-      {
-        name: 'Blockasset Legends',
-        symbol: 'LEGENDS',
-        uri: 'https://arweave.net/Q5y8_OehSOYCkGiX-hV1H6qiczoDaVdk4Eyi4lhhdQE',
-      },
-    ],
   },
   {
     name: 'blockasset-smesh-bros',
@@ -196,7 +267,7 @@ export const stakePoolMetadatas: StakePoolMetadata[] = [
     colors: {
       primary: '#000000',
       secondary: '#4da1de',
-      accent: '#1fcfb11c',
+      accent: '#30c2b9',
       fontColor: '#FFFFFF',
     },
     airdrops: [
@@ -384,10 +455,10 @@ export const stakePoolMetadatas: StakePoolMetadata[] = [
   {
     name: 'whales',
     displayName: 'Catalina Whales',
+    redirect: 'https://floating.catalinawhalemixer.com/',
     stakePoolAddress: new PublicKey(
       'BrR1W8bNBfJZGqzsSvMQ8tUJL9tm963E6qR7R99YReiD'
     ),
-    hidden: true,
     receiptType: ReceiptType.Original,
     imageUrl: '/logos/whales.jpg',
     colors: {
@@ -598,11 +669,11 @@ export const stakePoolMetadatas: StakePoolMetadata[] = [
     receiptType: ReceiptType.Original,
     imageUrl:
       'https://cdn.discordapp.com/attachments/475411995273854976/987098707449241600/logo_2.png',
-    maxStaked: 1956,
+    maxStaked: 1941,
     colors: {
-      primary: '#000000',
-      secondary: '#4da1de',
-      accent: '#1fcfb11c',
+      primary: '#2d0c65',
+      secondary: '#ed69fa',
+      accent: '#f7f6fe',
       fontColor: '#FFFFFF',
     },
   },
@@ -881,7 +952,7 @@ export const stakePoolMetadatas: StakePoolMetadata[] = [
     hostname: 'stake.1space.me',
     hideFooter: true,
     imageUrl: 'https://1space.me/images/os-logo-white.jpeg',
-    maxStaked: 200,
+    maxStaked: 300,
     links: [
       {
         text: 'ONEHERO NFT',
@@ -1019,7 +1090,7 @@ export const stakePoolMetadatas: StakePoolMetadata[] = [
     hideFooter: true,
     websiteUrl: 'https://www.rebellionbots.io',
     receiptType: ReceiptType.Original,
-    maxStaked: 801, // update with collection size
+    maxStaked: 1083, // update with collection size
     imageUrl: '/logos/rebellion-bots.jpeg',
     secondaryImageUrl: '/logos/secondary-rebellion-bots.png',
     tokenStandard: TokenStandard.NonFungible,
@@ -1472,32 +1543,6 @@ export const stakePoolMetadatas: StakePoolMetadata[] = [
       // fontColorSecondary: '#DE38C8',
       // backgroundSecondary: '#DE38C8',
     },
-    // analytics: [
-    //   {
-    //     metadata: {
-    //       key: 'Pass Type',
-    //       type: 'staked',
-    //       totals: [
-    //         {
-    //           key: 'Bronze',
-    //           value: 2352,
-    //         },
-    //         {
-    //           key: 'Silver',
-    //           value: 1085,
-    //         },
-    //         {
-    //           key: 'Gold',
-    //           value: 98,
-    //         },
-    //         {
-    //           key: 'Platinum',
-    //           value: 7,
-    //         },
-    //       ],
-    //     },
-    //   },
-    // ],
     links: [
       {
         text: 'HOME',
@@ -1522,6 +1567,32 @@ export const stakePoolMetadatas: StakePoolMetadata[] = [
       {
         text: 'DISCORD',
         value: 'https://warp.moonshinelabs.io/caps-discord',
+      },
+    ],
+    analytics: [
+      {
+        metadata: {
+          key: 'Pass Type',
+          type: 'staked',
+          totals: [
+            {
+              key: 'Bronze',
+              value: 3363,
+            },
+            {
+              key: 'Silver',
+              value: 1498,
+            },
+            {
+              key: 'Gold',
+              value: 125,
+            },
+            {
+              key: 'Platinum',
+              value: 10,
+            },
+          ],
+        },
       },
     ],
   },
@@ -1743,7 +1814,6 @@ export const stakePoolMetadatas: StakePoolMetadata[] = [
     hostname: 'harvest.steamland.io',
     imageUrl:
       'https://raw.githubusercontent.com/Steamland/images/main/harvest_logo.png',
-    hidden: true,
     styles: {
       fontFamily: 'Industry, sans-serif',
       fontWeight: 500,
@@ -1768,10 +1838,10 @@ export const stakePoolMetadatas: StakePoolMetadata[] = [
     stakePoolAddress: new PublicKey(
       '6JAjWAWhzAdZRVXmLKpzXy8idqPY3Jb5AUUXzBPm3FGt'
     ),
-    hostname: 'stake.pixel-y00ts',
+    hostname: 'staking.pixely00ts.xyz',
     hideFooter: true,
     hideAllowedTokens: true,
-    websiteUrl: '',
+    websiteUrl: 'https://www.pixely00ts.xyz/',
     receiptType: ReceiptType.Original,
     tokenStandard: TokenStandard.NonFungible,
     // styles to apply to the whole stake pool
@@ -1795,6 +1865,10 @@ export const stakePoolMetadatas: StakePoolMetadata[] = [
     // Website url if specified will be navigated to when the image in the header is clicked
     maxStaked: 10000,
     links: [
+      {
+        text: 'Pixel Y00ts',
+        value: 'https://www.pixely00ts.xyz/',
+      },
       {
         text: 'Twitter',
         value: 'https://twitter.com/PY00ts',
