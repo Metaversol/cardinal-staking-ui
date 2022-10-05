@@ -48,6 +48,48 @@ export function StakedStats({ tokenData }: { tokenData: StakeEntryTokenData }) {
             </span>
           </div>
         )}
+      {tokenData &&
+        tokenData.stakeEntry?.parsed &&
+        tokenData.stakeEntry.parsed.lastStakedAt && (
+          <div className="flex w-full flex-row justify-between text-xs font-semibold">
+            <span>Days Staked:</span>
+            <span className="text-right">
+              {Math.round(
+                ((
+                  tokenData.stakeEntry.parsed.cooldownStartSeconds ||
+                  new BN(UTCNow)
+                )
+                  .sub(tokenData.stakeEntry.parsed.lastStakedAt)
+                  // .mul(tokenData.stakeEntry.parsed.amount)
+                  .add(tokenData.stakeEntry.parsed.totalStakeSeconds)
+                  .toNumber()
+              ) /
+                8640) /
+                100}
+            </span>
+          </div>
+        )}
+      {tokenData &&
+        tokenData.stakeEntry?.parsed &&
+        tokenData.stakeEntry.parsed.lastStakedAt && (
+          <div className="flex w-full flex-row justify-between text-xs font-semibold">
+            <span>Days Since Claim:</span>
+            <span className="text-right">
+              {Math.round(
+                ((
+                  tokenData.stakeEntry.parsed.cooldownStartSeconds ||
+                  new BN(UTCNow)
+                )
+                  .sub(tokenData.stakeEntry.parsed.lastStakedAt)
+                  // .mul(tokenData.stakeEntry.parsed.amount)
+                  // .add(tokenData.stakeEntry.parsed.totalStakeSeconds)
+                  .toNumber()
+              ) /
+                8640) /
+                100}
+            </span>
+          </div>
+        )}
       {tokenData.stakeEntry?.pubkey && (
         <div className="flex w-full flex-row justify-between text-xs font-semibold">
           <span>Boost:</span>
