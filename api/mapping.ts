@@ -236,7 +236,7 @@ export const stakePoolMetadatas: StakePoolMetadata[] = [
     colors: {
       primary: '#000000',
       secondary: '#4da1de',
-      accent: '#1fcfb11c',
+      accent: '#2a393a',
       fontColor: '#FFFFFF',
     },
   },
@@ -303,7 +303,7 @@ export const stakePoolMetadatas: StakePoolMetadata[] = [
     colors: {
       primary: '#000000',
       secondary: '#4da1de',
-      accent: '#1fcfb11c',
+      accent: '#2a393a',
       fontColor: '#FFFFFF',
     },
     airdrops: [],
@@ -328,7 +328,7 @@ export const stakePoolMetadatas: StakePoolMetadata[] = [
     colors: {
       primary: '#000000',
       secondary: '#4da1de',
-      accent: '#1fcfb11c',
+      accent: '#2a393a',
       fontColor: '#FFFFFF',
     },
   },
@@ -352,8 +352,54 @@ export const stakePoolMetadatas: StakePoolMetadata[] = [
     colors: {
       primary: '#000000',
       secondary: '#4da1de',
-      accent: '#1fcfb11c',
+      accent: '#2a393a',
       fontColor: '#FFFFFF',
+    },
+  },
+  {
+    name: 'META',
+    displayName: 'META collections',
+    stakePoolAddress: new PublicKey(
+      'BCtcLrKhiZbFTRMB2W8iQWttYF82cLJzo7ZnnnkqXnnC'
+    ),
+    hostname: 'stake.metaladsai.com',
+    websiteUrl: 'https://metaladsai.com',
+    imageUrl:
+      'https://raw.githubusercontent.com/poisonlab/photo/main/WhatsApp%20Image%202022-10-05%20at%2017.53.36.jpeg',
+    styles: {
+      fontFamily: 'serif',
+      fontWeight: 500,
+    },
+    colors: {
+      primary: '#27033d',
+      secondary: '#27033d',
+      accent: '#a3219f',
+      fontColor: '#FFFFFF',
+      fontColorSecondary: '#000000',
+      backgroundSecondary: '#000000',
+    },
+  },
+  {
+    name: 'METALADS',
+    displayName: 'META LADS',
+    stakePoolAddress: new PublicKey(
+      'CQK61z8JRqoaowTLXhM61vY2bwLct2L2fiHdTNcZZx4v'
+    ),
+    hostname: 'stake-lads.metaladsai.com',
+    websiteUrl: 'https://metaladsai.com',
+    imageUrl:
+      'https://raw.githubusercontent.com/poisonlab/photo/main/WhatsApp%20Image%202022-10-06%20at%2019.58.33.jpeg',
+    styles: {
+      fontFamily: 'serif',
+      fontWeight: 500,
+    },
+    colors: {
+      primary: '#27033d',
+      secondary: '#27033d',
+      accent: '#a3219f',
+      fontColor: '#FFFFFF',
+      fontColorSecondary: '#000000',
+      backgroundSecondary: '#000000',
     },
   },
   {
@@ -437,7 +483,7 @@ export const stakePoolMetadatas: StakePoolMetadata[] = [
     colors: {
       primary: '#7D89D8',
       secondary: '##131418',
-      accent: '#1fcfb11c',
+      accent: '#2a393a',
       fontColor: '#FFFFFF',
     },
   },
@@ -641,7 +687,7 @@ export const stakePoolMetadatas: StakePoolMetadata[] = [
     colors: {
       primary: '#000000',
       secondary: '#4da1de',
-      accent: '#1fcfb11c',
+      accent: '#2a393a',
       fontColor: '#FFFFFF',
     },
   },
@@ -676,6 +722,10 @@ export const stakePoolMetadatas: StakePoolMetadata[] = [
       accent: '#f7f6fe',
       fontColor: '#FFFFFF',
     },
+    links: [
+      { text: 'Twitter', value: 'https://twitter.com/UnfrgtnOrbit' },
+      { text: 'Discord', value: 'https://discord.gg/U2RQ8tZvV9' },
+    ],
   },
   {
     name: 'The Frontier',
@@ -951,6 +1001,7 @@ export const stakePoolMetadatas: StakePoolMetadata[] = [
     receiptType: ReceiptType.Original,
     hostname: 'stake.1space.me',
     hideFooter: true,
+    logoPadding: true,
     imageUrl: 'https://1space.me/images/os-logo-white.jpeg',
     maxStaked: 300,
     links: [
@@ -1029,7 +1080,7 @@ export const stakePoolMetadatas: StakePoolMetadata[] = [
     colors: {
       primary: '#000000',
       secondary: '#4da1de',
-      accent: '#1fcfb11c',
+      accent: '#2a393a',
       fontColor: '#FFFFFF',
     },
   },
@@ -1651,6 +1702,60 @@ export const stakePoolMetadatas: StakePoolMetadata[] = [
     ],
   },
   {
+    name: 'test-guys',
+    displayName: 'Test Guys',
+    hostname: 'research.moonshinelabs.io',
+    nameInHeader: true,
+    stakePoolAddress: new PublicKey(
+      'z4x4twXzrw8XVEFqQs9EcmgeXfhMqRpwYVpJEeRAbVN'
+    ),
+    websiteUrl: 'https://warp.moonshinelabs.io/caps',
+    receiptType: ReceiptType.Original,
+    tokenStandard: TokenStandard.NonFungible,
+    imageUrl:
+      'https://www.arweave.net/DXw0PO5-EZlx26duubW157IfvpiQvjbAoM5VFCMFEcI?ext=png',
+    maxStaked: 1111,
+    backgroundImage:
+      'https://shdw-drive.genesysgo.net/5aWZWB6vXbZrf1CNmiM3rAWnzf36Bpuq8rxRYHBzGeGq/tgbg.png',
+    styles: {
+      fontFamily: 'Roboto Serif',
+    },
+    colors: {
+      primary: '#7928CA',
+      secondary: '#4a148c',
+      accent: '#DE38C8',
+      fontColor: '#FFFFFF',
+      // fontColorSecondary: '#DE38C8',
+      // backgroundSecondary: '#DE38C8',
+    },
+    links: [
+      {
+        text: 'HOME',
+        value: 'https://warp.moonshinelabs.io/caps-home',
+      },
+      {
+        text: 'GAME',
+        value: 'https://warp.moonshinelabs.io/caps-game',
+      },
+      {
+        text: 'MINT',
+        value: 'https://warp.moonshinelabs.io/caps-mint',
+      },
+      {
+        text: 'BUY',
+        value: 'https://warp.moonshinelabs.io/caps-buy',
+      },
+      {
+        text: 'TWITTER',
+        value: 'https://warp.moonshinelabs.io/caps-twitter',
+      },
+      {
+        text: 'DISCORD',
+        value: 'https://warp.moonshinelabs.io/caps-discord',
+      },
+    ],
+  },
+  {
     name: 'computation-units',
     displayName: 'Computation Units',
     hostname: 'compute.moonshinelabs.io',
@@ -1832,6 +1937,49 @@ export const stakePoolMetadatas: StakePoolMetadata[] = [
     },
   },
   {
+    name: 'y00topia',
+    displayName: 'y00topia staking',
+    stakePoolAddress: new PublicKey(
+      'GJtJVCBCXVkPuzmS45zWDEkztG1EGGvNcnddL2dsbDmh'
+    ),
+    websiteUrl: 'https://twitter.com/ABCy00topia',
+    imageUrl:
+      'https://cdn.discordapp.com/attachments/1017836201685823549/1027266302894669824/white.png',
+    backgroundImage:
+      'https://cdn.discordapp.com/attachments/1017836201685823549/1027264876961349712/abc_a.png',
+    maxStaked: 1111,
+
+    receiptType: ReceiptType.Original,
+    tokenStandard: TokenStandard.NonFungible,
+    hideAllowedTokens: true,
+    links: [
+      {
+        text: 'Discord',
+        value: 'https://discord.gg/dUE4ezvUDS',
+      },
+      {
+        text: 'Twitter',
+        value: 'https://twitter.com/ABCy00topia',
+      },
+      {
+        text: 'Buy',
+        value: 'https://magiceden.io/marketplace/abc_y00topia',
+      },
+    ],
+    styles: {
+      fontFamily: 'Industry, sans-serif',
+      fontWeight: 500,
+    },
+    colors: {
+      primary: '#120d18',
+      secondary: '#e42575',
+      accent: '#33273f',
+      fontColor: '#e61f57',
+      fontColorSecondary: '#000000',
+      backgroundSecondary: '#120d18',
+    },
+  },
+  {
     name: 'Pixel-Y00ts',
     displayName: 'Pixel Y0ots',
     nameInHeader: true,
@@ -1882,5 +2030,265 @@ export const stakePoolMetadatas: StakePoolMetadata[] = [
         value: 'https://magiceden.io/marketplace/pixel_yoots',
       },
     ],
+  },
+  {
+    name: 'hellshade',
+    displayName: 'Hellshade Staking',
+    stakePoolAddress: new PublicKey(
+      'GHZ671W39u4d4ELFvqfVeKor1fGGTunrS56PZQqM1wFM'
+    ),
+    description:
+      "Stake your artwork by @Hellshade here to start earning your $BBT '$Blackberry' Tokens for future art drops",
+    hidden: true,
+    notFound: false,
+    imageUrl:
+      'https://images-cdn.exchange.art/LH3Na6UWARcgucQoDRuIkxxaOYXIsAf-I03bPiEFhsw?ext=fastly&width=1000&optimize=medium&auto=avifwebp',
+    // secondaryImageUrl: 'https://raw.githubusercontent.com/flipthetip/test-tsc/main/arx.png',
+    backgroundImage:
+      'https://www.zingerbug.com/Backgrounds/background_images/black_stucco_wall_texture_seamless.jpg',
+    styles: {
+      fontFamily: 'Franklin Gothic Medium',
+      // fontWeight: 500,
+      backgroundSize: 'cover',
+      backgroundPosition: 'center',
+    },
+    colors: {
+      primary: '#000000',
+      secondary: '#5d7f9e',
+      accent: '#fff2cc',
+      fontColor: '#fff2cc',
+      fontColorSecondary: '#fff2cc',
+    },
+    // maxStaked: ,
+    receiptType: ReceiptType.Original,
+  },
+  {
+    name: 'azl-nutzzz-world',
+    displayName: 'AZL Nutzz World Staking',
+    stakePoolAddress: new PublicKey(
+      'APhntuf48ME176zvV3feCo9pN5mQuXqQFsC2gBiBw895'
+    ),
+    contrastHomepageBkg: true,
+    maxStaked: 3333,
+    links: [
+      {
+        text: 'Twitter',
+        value: 'https://twitter.com/AZLnft',
+      },
+      {
+        text: 'Discord',
+        value: 'https://discord.gg/cxgnzF43BT',
+      },
+      {
+        text: 'Magic Eden',
+        value: 'https://magiceden.io/marketplace/azl_nutzzz_world',
+      },
+    ],
+
+    receiptType: ReceiptType.Original,
+    websiteUrl: 'https://stake.cardinal.so/azl-nutzzz-world',
+    imageUrl:
+      'https://bafybeihy4wxax43nyhffx5dyzrt33pjipwap6qmtli55xoft32qsgejxnu.ipfs.nftstorage.link/',
+    styles: {
+      fontFamily: 'Industry, sans-serif',
+      fontWeight: 500,
+    },
+    tokenStandard: TokenStandard.NonFungible,
+    hideAllowedTokens: true,
+    colors: {
+      // primary: '#2d0c65',
+      //secondary: '#ed69fa',
+      //accent: '#f7f6fe',
+      //fontColor: '#FFFFFF',
+      primary: '#000000',
+      secondary: '#BD38F3',
+      accent: '#8B2AB4',
+      fontColor: '#FFFFFF',
+    },
+  },
+  {
+    name: 'MetaMercs',
+    displayName: 'METAMERCS',
+    nameInHeader: true,
+    stakePoolAddress: new PublicKey(
+      'G9nryHatSzQQ93ehjNejhiZpmgzQsRxZVTzLSxiDp8uU'
+    ),
+    hostname: 'vaults.metacreed.com',
+    hideFooter: true,
+    hideAllowedTokens: true,
+    websiteUrl: 'https://www.metacreed.com/',
+    receiptType: ReceiptType.Original,
+    tokenStandard: TokenStandard.NonFungible,
+    // styles to apply to the whole stake pool
+    styles: {
+      fontFamily: 'Industry, sans-serif',
+      fontWeight: 500,
+    },
+    // Colors object to style the stake page
+    colors: {
+      primary: '#181818',
+      secondary: '#177b7b',
+      backgroundSecondary: 'rgb(24 24 24 / 90%)',
+      fontColor: '#F2F2F2',
+    },
+    imageUrl:
+      'https://tz7u3k2viityfxxdjyjaqlvuan4doqvfzin6jbvp5cbiivqk25ja.arweave.net/nn9Nq1VCJ4Le404SCC60A3g3QqXKG-SGr-iChFYK11I',
+    // Background image for poolq
+    backgroundImage:
+      'https://raw.githubusercontent.com/DicersN00b/loots-logo/main/BG%20STAKING.png',
+
+    // Website url if specified will be navigated to when the image in the header is clicked
+    maxStaked: 777,
+    links: [
+      {
+        text: 'MetaCreed',
+        value: 'https://www.metacreed.com/',
+      },
+      {
+        text: 'Twitter',
+        value: 'https://twitter.com/metacreed',
+      },
+      {
+        text: 'Discord',
+        value: 'https://discord.com/invite/metacreed',
+      },
+      {
+        text: 'Buy MetaMercs',
+        value:
+          'https://hyperspace.xyz/collection/4Wo6Yuv9Den1DHuv8GmFDhA8cwGa28ToaXRwLwCRUqAX',
+      },
+    ],
+  },
+  {
+    name: 'gnarafdao',
+    displayName: 'GnarAF DAO',
+    stakePoolAddress: new PublicKey(
+      '3hdpn7vkfASdzWvqrLgT83TZLNWdhkG3C1LeubWk7RRZ'
+    ),
+    websiteUrl: 'https://bobbyrabbits.com/#/GnarAFDAO',
+    imageUrl: 'https://arweave.net/H-9FITsB2SdPfJXhYq2QWMMSi7SG4LA_0MHbNnN_zN8',
+    maxStaked: 3333,
+    nameInHeader: true,
+    description: 'Stake your GnarAF DAO Card to earn $GNAR',
+    receiptType: ReceiptType.Original,
+    tokenStandard: TokenStandard.NonFungible,
+    hideAllowedTokens: true,
+    hideFooter: true,
+    styles: {
+      fontFamily: 'Paralucent',
+      fontWeight: 500,
+      backgroundSize: '100% auto',
+    },
+    links: [
+      {
+        text: 'Mint Now',
+        value: 'https://gnarafdao.vercel.app/',
+      },
+    ],
+    colors: {
+      primary: '#672394',
+      secondary: '#fad141',
+      accent: '#672394',
+      fontColor: '#e8e6d9',
+    },
+  },
+
+  {
+    name: 'thepolarians',
+    displayName: 'The Polarians',
+    stakePoolAddress: new PublicKey(
+      'HSLsc3fyHYyBjTnSPSGyyxubcGdtw4ih8odTcHturZrU'
+    ),
+    websiteUrl: 'https://twitter.com/polariansnft',
+    receiptType: ReceiptType.Original,
+    maxStaked: 2400, // update with collection size
+    imageUrl:
+      'https://dl.airtable.com/.attachments/4267ccfa3ec6b022948a23376955d686/ad374799/polarproject500x500.gif',
+    tokenStandard: TokenStandard.NonFungible,
+    styles: {
+      fontFamily: 'Player One',
+      fontWeight: 500,
+    },
+    description: 'Stake your Polarians NFT to earn $CRYSTAL.',
+    colors: {
+      primary: '#383838',
+      secondary: '#4D4DFF',
+      accent: '#4D4DFF',
+      fontColor: '#4D4DFF',
+      fontColorSecondary: '#FFFFFF',
+    },
+  },
+  {
+    name: 'steamland',
+    displayName: 'Harvesting - Steamland',
+    stakePoolAddress: new PublicKey(
+      '5n9G7o9ZZFmfx4dcbd4HgNYcGWFiQ2wGKaKHYT8bWDf7'
+    ),
+    contrastHomepageBkg: true,
+    maxStaked: 2222,
+    receiptType: ReceiptType.Original,
+    websiteUrl: 'https://steamland.io',
+    hostname: 'harvest.steamland.io',
+    imageUrl:
+      'https://raw.githubusercontent.com/Steamland/images/main/harvest_logo.png',
+    styles: {
+      fontFamily: 'Industry, sans-serif',
+      fontWeight: 500,
+    },
+    backgroundImage:
+      'https://raw.githubusercontent.com/Steamland/images/main/harvesting_background.png',
+    tokenStandard: TokenStandard.NonFungible,
+    hideAllowedTokens: true,
+    colors: {
+      primary: '#1A1A1D',
+      secondary: '#9e333f',
+      accent: '#313063',
+      fontColor: '#FFFFFF',
+      fontColorSecondary: '#FFFFFF',
+      backgroundSecondary: '#4E4E50',
+    },
+  },
+  {
+    name: 'rejected y00ts',
+    displayName: 'RYC staking',
+    stakePoolAddress: new PublicKey(
+      'FMoMKHYVSs38PtGUTZXkK4ALCemZRqszirKsdUbKYJK9'
+    ),
+    websiteUrl: 'https://twitter.com/rejected_y00ts',
+    imageUrl:
+      'https://bafkreiepudc3r356k2ftl3vcdwtykpkqesuhzx7aaqwkqtmdoa35sqhsca.ipfs.nftstorage.link/',
+    backgroundImage:
+      'https://bafybeigfpcg7r6t3hjmpnkw7qlxjpoqyj2ck3lvsara7vtkahfh47c2osy.ipfs.nftstorage.link/',
+    maxStaked: 6969,
+
+    receiptType: ReceiptType.Original,
+    tokenStandard: TokenStandard.NonFungible,
+    hideAllowedTokens: true,
+    links: [
+      {
+        text: 'Discord',
+        value: 'https://discord.gg/gfdcAyrcn9',
+      },
+      {
+        text: 'Twitter',
+        value: 'https://twitter.com/Rejected_y00ts',
+      },
+      {
+        text: 'Magic Eden',
+        value: 'https://magiceden.io/marketplace/rejected_y00ts_club_',
+      },
+    ],
+    styles: {
+      fontFamily: 'Industry, sans-serif',
+      fontWeight: 500,
+    },
+    colors: {
+      primary: '#120d18',
+      secondary: '#e42575',
+      accent: '#33273f',
+      fontColor: '#e61f57',
+      fontColorSecondary: '#000000',
+      backgroundSecondary: '#120d18',
+    },
   },
 ]
