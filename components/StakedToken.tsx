@@ -78,7 +78,7 @@ export const StakedToken = ({
           selectUnstakedToken={() => {}}
           selectStakedToken={select}
         />
-        <div className="aspect-square w-full grow overflow-hidden rounded-t-xl">
+        <div className="w-full grow overflow-hidden rounded-t-xl">
           {mintMetadata.isFetched &&
           getImageFromTokenData(tk, mintMetadata.data) ? (
             <img
